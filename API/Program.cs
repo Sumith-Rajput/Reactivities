@@ -1,6 +1,8 @@
 using Persistence;
 using Microsoft.EntityFrameworkCore;
+using MediatR;
 using Microsoft.OpenApi.Writers;
+using Application.Activities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,7 @@ builder.Services.AddCors(opt =>{
         policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
     });
 });
+builder.Services.AddMediatR(typeof(List.Handler));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
