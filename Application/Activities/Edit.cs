@@ -1,8 +1,8 @@
-using AutoMapper;
-using Domain;
+using Application.Core;
 using MediatR;
+using AutoMapper;
 using Persistence;
-
+using Domain;
 namespace Application.Activities
 {
     public class Edit
